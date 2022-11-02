@@ -1,2 +1,2 @@
-# libft
-Libft fot 42
+# Libft
+String functions libary in C.
