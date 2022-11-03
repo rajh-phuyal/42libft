@@ -6,11 +6,11 @@
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:16:10 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/02 16:22:54 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/11/03 22:59:42 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

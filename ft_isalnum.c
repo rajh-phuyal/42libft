@@ -6,11 +6,11 @@
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:15:50 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/02 16:15:51 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/11/03 22:39:47 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);

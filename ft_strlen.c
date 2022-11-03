@@ -6,13 +6,13 @@
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:58:33 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/02 16:58:34 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/11/03 22:57:35 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(const char *str)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (str[len])

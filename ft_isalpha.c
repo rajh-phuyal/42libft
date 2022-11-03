@@ -6,11 +6,11 @@
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:15:58 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/02 16:15:59 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/11/03 22:40:26 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (1);
