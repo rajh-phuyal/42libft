@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: nexus <nexus@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:24:08 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/03 13:57:41 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/11/04 16:29:35 by nexus            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char	*ft_strrchr(const char *str, int c)
 			return ((char *)str + len);
 		len--;
 	}
-	return (NULL);
+	return (0);
 }
