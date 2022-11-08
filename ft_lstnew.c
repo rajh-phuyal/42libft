@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rphuyal <rphuyal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 15:57:04 by nexus             #+#    #+#             */
-/*   Updated: 2022/11/08 20:37:59 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/08 13:09:37 by rphuyal           #+#    #+#             */
+/*   Updated: 2022/11/08 20:27:22 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstnew(void *content)
 {
-	char	*newstr;
-	int		index;
+	t_list	*new_node;
 
-	if (!s1 || !s2)
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
 		return (NULL);
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!newstr)
-		return (0);
-	index = 0;
-	while (*s1)
-		newstr[index++] = *(s1++);
-	while (*s2)
-		newstr[index++] = *(s2++);
-	newstr[index] = '\0';
-	return (newstr);
+	new_node -> content = content;
+	new_node -> next = NULL;
+	return (new_node);
 }

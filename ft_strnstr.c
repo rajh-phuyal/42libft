@@ -6,7 +6,7 @@
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:52:59 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/03 22:44:42 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/11/08 20:21:36 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t max)
 	size_t	j;
 
 	i = 0;
-	if (s2[i] == '\0' || max == 0)
+	if (!s1 || !s2)
+		return (NULL);
+	if (!s2[i] || !s2[i])
 		return ((char *)s1);
-	while (s1[i] != '\0' && i < max)
+	while (s1[i] && i < max)
 	{
 		j = 0;
 		if (s1[i] == s2[j])
@@ -33,7 +35,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t max)
 					break ;
 			}
 			if (s2[j] == '\0')
-				return ((char *)s1 + i);
+				return ((char *)(s1 + i));
 		}
 		i++;
 	}

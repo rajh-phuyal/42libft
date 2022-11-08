@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: rphuyal <rphuyal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:23:48 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/03 23:09:23 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/11/08 21:12:16 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ static int	get_length(char c, char *s)
 {
 	int	len;
 
-	len = 1;
+	len = 0;
 	while (*s)
 	{
-		if (*s != c)
+		if (*s == c)
 			s++;
 		else
 		{
-			while (*s == c)
+			while (*s != c && *s)
 				s++;
 			len++;
 		}
@@ -31,13 +31,15 @@ static int	get_length(char c, char *s)
 	return (len);
 }
 
-char	*word_dup(char *s, int start, int end, int len)
+static char	*new_word(const char *s, int start, int end, int len)
 {
 	char	*new;
 	int		i;
 
 	i = 0;
 	new = (char *)malloc(sizeof(char) * len + 1);
+	if (!new)
+		new = (char *)malloc(sizeof(char) * len + 1);
 	while (start < end)
 		new[i++] = s[start++];
 	new[i] = '\0';
@@ -51,7 +53,7 @@ char	**ft_split(char const *s, char c)
 	int		end;
 	int		index_split;
 
-	split = (char **)malloc(sizeof(char *) * get_length(c, (char *)s) + 1);
+	split = (char **)malloc(sizeof(char *) * (get_length(c, (char *)s) + 1));
 	if (!split || !s)
 		return (0);
 	i = 0;
@@ -63,12 +65,12 @@ char	**ft_split(char const *s, char c)
 			end = i;
 			while (s[end] && s[end] != c)
 				end++;
-			split[index_split++] = word_dup((char *)s, i, end, end - i);
+			split[index_split++] = new_word(s, i, end, end - i);
 			i = end;
 		}
 		else
 			i++;
 	}
-	split[index_split] = '\0';
+	split[index_split] = 0;
 	return (split);
 }
