@@ -6,7 +6,7 @@
 /*   By: rphuyal <rphuyal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 00:07:23 by nexus             #+#    #+#             */
-/*   Updated: 2022/11/08 21:16:55 by rphuyal          ###   ########.fr       */
+/*   Updated: 2022/11/09 14:00:45 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 1 || c < 0)
+	if (c < 0)
 		return ;
 	write(fd, &c, 1);
 }

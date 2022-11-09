@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+         #
+#    By: rphuyal <rphuyal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 16:15:26 by rphuyal           #+#    #+#              #
-#    Updated: 2022/11/08 13:25:43 by rphuyal          ###   ########.fr        #
+#    Updated: 2022/11/09 15:23:11 by rphuyal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ RM = rm -f
 
 SRC = $(wildcard *.c)
 
-BONUS = $(wildcard *.c)
-
 OBJ = $(SRC:.c=.o)
+
+BONUS = $(wildcard *.c)
 
 BONUS_OBJ = $(BONUS:.c=.o)
 
