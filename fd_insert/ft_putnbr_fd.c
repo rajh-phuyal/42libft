@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 16:16:18 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/03 22:45:29 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/05 00:23:06 by nexus             #+#    #+#             */
+/*   Updated: 2022/12/10 21:31:54 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+/* a simple function that puts the given int in the given fd*/
+static void	ft_putchar(char c, int fd)
 {
-	size_t	i;
+	write(fd, &c, 1);
+}
 
-	i = 0;
-	while (i < n)
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == INT_MIN)
 	{
-		if (((char *)str)[i] == (char)c)
-			return ((void *)(str + i));
-		i++;
+		ft_putchar('-', fd);
+		ft_putchar('2', fd);
+		ft_putnbr_fd(147483648, fd);
 	}
-	return (0);
+	else if (n < 0)
+	{
+		ft_putchar('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar(n + 48, fd);
 }

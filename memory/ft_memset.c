@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rphuyal <rphuyal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 21:01:17 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/09 15:14:04 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/02 15:59:41 by rphuyal           #+#    #+#             */
+/*   Updated: 2022/12/10 21:38:31 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *m1, const void *m2, size_t n)
+/* sets the given char to the given block of memory,
+until the specified number of bytes */
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	if (m1 == m2)
-		return (0);
 	while (i < n)
 	{
-		if (*(unsigned char *)(m1 + i) != *(unsigned char *)(m2 + i))
-			return (*(unsigned char *)(m1 + i) - *(unsigned char *)(m2 + i));
+		((unsigned char *)s)[i] = c;
 		i++;
 	}
-	return (0);
+	return (s);
 }

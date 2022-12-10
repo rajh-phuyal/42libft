@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 16:19:41 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/03 23:00:02 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/03 21:01:17 by rphuyal           #+#    #+#             */
+/*   Updated: 2022/12/10 21:36:25 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+/* compares the given two block of memory until the bytes specified
+and returns, -1, 0 and 1 based on the result of the comparision*/
+int	ft_memcmp(const void *m1, const void *m2, size_t n)
 {
-	void	*alloc;
+	size_t	i;
 
-	alloc = (void *)malloc(nitems * size);
-	if (!alloc)
+	i = 0;
+	if (m1 == m2)
 		return (0);
-	ft_bzero(alloc, nitems * size);
-	return (alloc);
+	while (i < n)
+	{
+		if (*(unsigned char *)(m1 + i) != *(unsigned char *)(m2 + i))
+			return (*(unsigned char *)(m1 + i) - *(unsigned char *)(m2 + i));
+		i++;
+	}
+	return (0);
 }

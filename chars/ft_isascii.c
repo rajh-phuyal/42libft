@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 16:16:10 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/03 22:59:42 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/02 16:16:02 by rphuyal           #+#    #+#             */
+/*   Updated: 2022/12/10 21:28:34 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+/* checks weather a given char is ASCII value*/
+int	ft_isascii(int c)
 {
-	if (c >= 32 && c <= 126)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

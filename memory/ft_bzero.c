@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rphuyal <rphuyal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 00:07:23 by nexus             #+#    #+#             */
-/*   Updated: 2022/11/09 14:00:45 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/02 14:56:04 by rphuyal           #+#    #+#             */
+/*   Updated: 2022/12/10 21:32:42 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+/* null terminates the whole block of given memory*/
+void	ft_bzero(void *s, size_t n)
 {
-	if (c < 0)
-		return ;
-	write(fd, &c, 1);
+	ft_memset(s, 0, n);
 }

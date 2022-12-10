@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 19:07:33 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/03 22:46:19 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/02 16:16:05 by rphuyal           #+#    #+#             */
+/*   Updated: 2022/12/10 21:29:07 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int ch)
+/* checks weather a given char is a decimal */
+int	ft_isdigit(int c)
 {
-	if (ch >= 'a' && ch <= 'z')
-		return (ch - 32);
+	if (c >= '0' && c <= '9')
+		return (1);
 	else
-		return (ch);
+		return (0);
 }

@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 16:16:02 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/02 16:16:03 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/02 19:07:33 by rphuyal           #+#    #+#             */
+/*   Updated: 2022/12/10 21:29:58 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+/* converts a given char to Uppercase*/
+int	ft_toupper(int ch)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
+	if (ch >= 'a' && ch <= 'z')
+		return (ch - 32);
 	else
-		return (0);
+		return (ch);
 }

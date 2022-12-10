@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rphuyal <rphuyal@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 16:16:05 by rphuyal           #+#    #+#             */
-/*   Updated: 2022/11/02 16:16:06 by rphuyal          ###   ########.fr       */
+/*   Created: 2022/11/02 16:19:41 by rphuyal           #+#    #+#             */
+/*   Updated: 2022/12/10 21:33:37 by rphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+/* reallocated a memory block based on given params,
+and null terminates the whole block*/
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
+	void	*alloc;
+
+	alloc = (void *)malloc(nitems * size);
+	if (!alloc)
 		return (0);
+	ft_bzero(alloc, nitems * size);
+	return (alloc);
 }
